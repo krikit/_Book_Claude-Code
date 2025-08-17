@@ -182,15 +182,37 @@ npm run dev &
 - 예: "Git 초기화" + "커밋" + "푸시"를 별도로 나누지 말고 한 번에 처리
 - 사용자 승인 후 추가 확인 없이 배포 진행
 
-### GitHub Pages 배포 5단계 프로세스
+### GitHub Pages 배포 3단계 프로세스
 
-사용자가 웹페이지를 GitHub Pages에 공개 요청할 때 아래 5단계를 순차적으로 진행하세요:
+사용자가 웹페이지를 GitHub Pages에 공개 요청할 때 아래 3단계를 순차적으로 진행하세요:
 
-1. **Git 저장소 초기화 및 커밋**: `git init`, `git add .`, `git commit`
-2. **프로덕션 빌드 생성**: `npm run build`
-3. **GitHub 저장소 생성 및 코드 업로드**: 현재 저장소를 사용하여 push (새 저장소 생성하지 않음)
-4. **gh-pages 패키지 설치 및 배포**: `npm install gh-pages`, `npx gh-pages -d dist`
-5. **GitHub Pages 설정 및 최종 URL 제공**: Settings → Pages 설정 확인
+1. **새로운 GitHub 저장소 만들기**: 수동으로 GitHub 웹사이트에서 저장소 생성 (GitHub CLI 사용 금지)
+   - https://github.com 접속
+   - 우상단 "+" → "New repository" 클릭
+   - Repository name 입력
+   - Public 선택 후 "Create repository" 클릭
+2. **만들어진 GitHub 저장소에 코드 업로드**: `git init`, `git add .`, `git commit`, `git push`
+3. **GitHub Pages 설정 및 배포**: `npm install gh-pages`, `npx gh-pages -d dist`, Settings → Pages 설정
+
+### 중요 사항
+- **GitHub CLI (`gh`) 사용 금지**: 모든 GitHub 관련 작업은 웹 인터페이스 또는 git 명령어로만 수행
+
+### GitHub Pages 배포 시 중요 사항
+
+**상대 경로 수정 필수**:
+- GitHub Pages에서는 절대 경로(`/assets/...`)가 작동하지 않음
+- gh-pages 브랜치의 index.html에서 모든 asset 경로를 상대 경로로 수정 필요
+- 수정 예시:
+  ```html
+  <!-- 잘못된 경로 (절대 경로) -->
+  <script src="/assets/index-abc123.js"></script>
+  <link href="/assets/index-abc123.css" rel="stylesheet">
+  
+  <!-- 올바른 경로 (상대 경로) -->
+  <script src="./assets/index-abc123.js"></script>
+  <link href="./assets/index-abc123.css" rel="stylesheet">
+  ```
+- gh-pages 브랜치로 체크아웃한 후 index.html 파일 수정 후 재배포 필요
 
 ## 배포 플랫폼 선택 가이드
 
