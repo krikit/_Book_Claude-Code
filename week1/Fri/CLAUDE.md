@@ -174,28 +174,197 @@ npm run dev &
 
 ## 배포 진행 방식 - 중요 사항
 
-**절대 중요**: 웹페이지를 GitHub Pages에 공개할 때도 사용자에게 1번만 물어보고 승인을 받는다. 승인 후에는 더 이상 질문하지 않고 모든 배포 작업을 완료한다.
+**절대 중요**: 사용자가 웹페이지를 GitHub Pages에 공개 요청할 때 **1번만 물어보고 승인을 받는다**. 승인 후에는 더 이상 질문하지 않고 모든 배포 작업을 완료한다.
 
 **배포 작업 진행 방식**:
+- **TodoWrite 도구로 3단계 배포 todo 생성**: GitHub 배포 전용 todo 리스트 생성
 - 각 배포 단계는 한 번에 완전히 완료해야 함
 - 단계를 세분화하여 여러 번 나누지 말고 통합 진행
 - 예: "Git 초기화" + "커밋" + "푸시"를 별도로 나누지 말고 한 번에 처리
 - 사용자 승인 후 추가 확인 없이 배포 진행
 
-### GitHub Pages 배포 3단계 프로세스
+### GitHub Pages 배포 3단계 TodoWrite 프로세스
 
-사용자가 웹페이지를 GitHub Pages에 공개 요청할 때 아래 3단계를 순차적으로 진행하세요:
+사용자가 웹페이지를 GitHub Pages에 공개 요청할 때:
 
-1. **새로운 GitHub 저장소 만들기**: 수동으로 GitHub 웹사이트에서 저장소 생성 (GitHub CLI 사용 금지)
+**첫 번째**: TodoWrite 도구로 다음 3단계 배포 전용 todo 리스트 생성
+1. GitHub 저장소 생성
+2. 코드 업로드 및 배포
+3. GitHub Pages 설정 완료
+
+**두 번째**: 사용자에게 1번만 승인 요청 후 모든 단계 자동 진행
+
+### 3단계 배포 프로세스 상세
+
+1. **GitHub 저장소 생성**: 수동으로 GitHub 웹사이트에서 저장소 생성 (GitHub CLI 사용 금지)
    - https://github.com 접속
    - 우상단 "+" → "New repository" 클릭
    - Repository name 입력
    - Public 선택 후 "Create repository" 클릭
-2. **만들어진 GitHub 저장소에 코드 업로드**: `git init`, `git add .`, `git commit`, `git push`
-3. **GitHub Pages 설정 및 배포**: `npm install gh-pages`, `npx gh-pages -d dist`, Settings → Pages 설정
+   - **중요**: 사용자에게 저장소 URL 제공 후 자동으로 2단계 진행
+
+2. **코드 업로드 및 GitHub Pages 배포**: 
+   - /tmp 디렉터리에 workspace 폴더 생성: `mkdir -p /tmp/workspace`
+   - workspace로 이동 후 git clone: `cd /tmp/workspace && git clone [저장소URL]`
+   - 현재 웹페이지 파일들을 클론된 폴더로 복사
+   - 의존성 재설치: `rm -rf node_modules && npm install`
+   - 빌드 실행: `npm run build`
+   - gh-pages 설치: `npm install gh-pages --save-dev`
+   - GitHub Pages 배포: `npx gh-pages -d dist`
+   - **중요**: 배포 후 상대 경로 수정 필수
+   - gh-pages 브랜치 체크아웃: `git fetch origin && git stash && git checkout gh-pages`
+   - index.html 절대 경로를 상대 경로로 수정
+   - 수정 후 커밋 및 푸시
+   - git add, commit, push 실행
+
+3. **GitHub Pages 최종 설정**: 
+   - 사용자에게 GitHub Settings → Pages 설정 안내
+   - Source: "Deploy from a branch" 선택
+   - Branch: "gh-pages" 선택
+   - 배포 완료 URL 제공: `https://[username].github.io/[repository]`
 
 ### 중요 사항
 - **GitHub CLI (`gh`) 사용 금지**: 모든 GitHub 관련 작업은 웹 인터페이스 또는 git 명령어로만 수행
+
+## 배포 과정에서 발생한 주요 문제 및 해결책
+
+### 문제 1: node_modules 의존성 오류
+**증상**: `Cannot find module '/private/tmp/workspace/cat-dancing-page/node_modules/dist/node/cli.js'`
+**원인**: 복사된 node_modules가 제대로 작동하지 않음
+**해결책**: 
+```bash
+rm -rf node_modules
+npm install
+```
+
+### 문제 2: 중첩된 폴더 구조로 인한 Git 오류
+**증상**: `error: 'cat-dancing-page/' does not have a commit checked out`
+**원인**: cp 명령어로 복사할 때 중첩된 폴더 구조 생성
+**해결책**: 
+```bash
+rm -rf cat-dancing-page  # 중첩 폴더 제거
+git add .
+```
+
+### 문제 3: Git 작업 디렉토리 변경사항 충돌
+**증상**: `Your local changes to the following files would be overwritten by checkout`
+**원인**: gh-pages 브랜치 체크아웃 시 package.json 변경사항 충돌
+**해결책**: 
+```bash
+git stash  # 변경사항 임시 저장
+git checkout gh-pages
+```
+
+### 문제 4: GitHub Pages 절대 경로 문제
+**증상**: 배포된 사이트에서 CSS/JS 파일 로드 실패
+**원인**: Vite 빌드 시 생성되는 절대 경로(`/assets/...`)가 GitHub Pages에서 작동하지 않음
+**해결책**: gh-pages 브랜치에서 index.html 수정
+```html
+<!-- 변경 전 -->
+<script src="/assets/index-jqnrVJWH.js"></script>
+<link href="/assets/index-BYtPq8ts.css" rel="stylesheet">
+
+<!-- 변경 후 -->
+<script src="./assets/index-jqnrVJWH.js"></script>
+<link href="./assets/index-BYtPq8ts.css" rel="stylesheet">
+```
+
+### 권장 배포 프로세스 (개선된 버전)
+
+1. **임시 작업공간에서 클린 배포**:
+   ```bash
+   mkdir -p /tmp/workspace
+   cd /tmp/workspace
+   git clone [저장소URL]
+   cd [저장소명]
+   ```
+
+2. **의존성 재설치 및 빌드**:
+   ```bash
+   rm -rf node_modules  # 기존 의존성 제거
+   npm install          # 깨끗한 의존성 설치
+   npm run build        # 프로덕션 빌드
+   ```
+
+3. **gh-pages 배포 및 경로 수정**:
+   ```bash
+   npm install gh-pages --save-dev
+   npx gh-pages -d dist
+   git fetch origin
+   git stash  # 변경사항이 있다면
+   git checkout gh-pages
+   # index.html에서 절대 경로를 상대 경로로 수정
+   git add . && git commit -m "Fix asset paths for GitHub Pages" && git push
+   ```
+
+### 배포 후 필수 확인 과정
+
+**중요**: GitHub Pages 배포 후 반드시 다음 단계를 수행하세요:
+
+1. **5분 대기**: GitHub Pages CDN 캐시 업데이트 시간
+2. **curl로 배포 상태 확인**:
+   ```bash
+   curl https://[username].github.io/[repository]/
+   ```
+3. **상대 경로 재확인**: 
+   - 빌드된 `dist/index.html`에서 절대 경로(`/assets/...`) 확인
+   - 필요시 상대 경로(`./assets/...`)로 수정 후 재배포
+   - **주의**: Vite 빌드는 기본적으로 절대 경로를 생성하므로 매번 확인 필요
+
+### GitHub Pages CDN 캐시 문제 해결
+
+**증상**: 배포 후에도 이전 버전이 보이는 경우
+**원인**: GitHub Pages CDN 캐시 지연
+**해결책**:
+- 5-10분 대기 후 재확인
+- 브라우저 캐시 지우기 (Ctrl+F5, Cmd+Shift+R)
+- 시크릿 모드로 접속하여 캐시 없이 확인
+
+### gh-pages Submodule 문제 방지
+
+**문제**: GitHub Actions에서 `fatal: No url found for submodule path 'node_modules/.cache/gh-pages/...'` 오류
+**원인**: gh-pages 패키지의 캐시 폴더가 git submodule로 잘못 인식됨
+**증상**: 
+```
+Error: fatal: No url found for submodule path 'node_modules/.cache/gh-pages/https!github.com!...' in .gitmodules
+Error: The process '/usr/bin/git' failed with exit code 128
+```
+
+**해결책**:
+```bash
+# 문제가 발생한 경우 즉시 실행
+cd /tmp/workspace/[repository-name]
+git rm --cached node_modules/.cache/gh-pages/[repository-url]
+rm -rf node_modules/.cache/gh-pages
+git add . && git commit -m "Remove gh-pages cache submodule" && git push origin gh-pages
+```
+
+**방지 대책**:
+1. **.gitignore에 캐시 폴더 추가**:
+   ```
+   # gh-pages 캐시 방지
+   node_modules/.cache/
+   .cache/
+   ```
+
+2. **배포 전 캐시 폴더 정리**:
+   ```bash
+   rm -rf node_modules/.cache/gh-pages
+   npx gh-pages -d dist
+   ```
+
+3. **배포 후 즉시 캐시 폴더 확인**:
+   ```bash
+   # 캐시 폴더가 git에 추가되었는지 확인
+   git status | grep "cache"
+   # 만약 있다면 즉시 제거
+   git rm --cached node_modules/.cache/gh-pages/* 2>/dev/null || true
+   ```
+
+**주의사항**: 
+- gh-pages 패키지는 배포 시 자동으로 캐시 폴더 생성
+- 이 폴더가 git에 추가되면 submodule 오류 발생
+- 반드시 .gitignore에 캐시 경로 추가하여 예방
 
 ### GitHub Pages 배포 시 중요 사항
 
