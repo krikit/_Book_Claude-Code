@@ -3,14 +3,13 @@
 <img src="https://contents.kyobobook.co.kr/sih/fit-in/458x0/pdt/9791140715725.jpg" width="400">
 </a>
 
-> 🔔 **_알림1: <클로드 코드> 완독 챌린지가 인프런에서 진행 중입니다. 모집은 9월 17일까지 입니다. [링크](https://www.inflearn.com/challenge/4%EC%A3%BC-%EA%B3%BC%EC%A0%95-%ED%95%9C-%EA%B1%B8%EC%9D%8C-%EC%95%9E%EC%84%A0-%EA%B0%9C%EB%B0%9C%EC%9E%90%EB%A5%BC-%EC%9C%84)
-이 저장소는 [한 걸음 앞선 개발자가 지금 꼭 알아야  할 클로드  코드](한 걸음 앞선 개발자가 지금 꼭 알아야 할 클로드 코드) 책에 실습을 위한 코드를 제공합니다.
+> 🔔 **_알림1: <클로드 코드> 완독 챌린지가 인프런에서 진행 중입니다. 모집은 **9월 17일**까지 입니다.[링크](https://www.inflearn.com/challenge/4%EC%A3%BC-%EA%B3%BC%EC%A0%95-%ED%95%9C-%EA%B1%B8%EC%9D%8C-%EC%95%9E%EC%84%A0-%EA%B0%9C%EB%B0%9C%EC%9E%90%EB%A5%BC-%EC%9C%84)
 
-각 주(Week)별 내용은 아래와 같습니다.
+이 저장소는 [한 걸음 앞선 개발자가 지금 꼭 알아야  할 클로드  코드](한 걸음 앞선 개발자가 지금 꼭 알아야 할 클로드 코드) 책에 실습을 위한 코드를 제공합니다.
 
 ---
 
-## 제공되는 스크립트
+각 주(Week)별 내용은 아래와 같습니다.
 
 ### 1주차: 클로드  코드 시작하기  
   - 월: 클로드 코드 설치하기 
@@ -59,7 +58,7 @@
 
 ## 유용한 정보
 -  📜 [제미나이 CLI(Gemini CLI)로 쿠버네티스 관리하기](https://yozm.wishket.com/magazine/detail/3228/)
--  📜 [제미나이 CLI(Gemini CLI)로 프로메테우스/그라파나 배포하기](https://yozm.wishket.com/magazine/detail/3229/)
+-  📜 [제미나이 CLI(Gemini CLI)로 프로메테우스/그라파나 배포하기](https://yozm.wishket.com/magazine/detail/3239/)
 -  📜 [알아두면 쓸모있는 제미나이 CLI(Gemini CLI) 사용법](https://yozm.wishket.com/magazine/detail/3259/)
 
 
