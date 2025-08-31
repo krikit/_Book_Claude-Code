@@ -1,0 +1,54 @@
+{
+  "mcpServers": {
+    "github": {
+      "type": "stdio",
+      "command": "github-mcp-server",
+      "args": [
+        "stdio"
+      ],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "${env:GITHUB_PERSONAL_ACCESS_TOKEN}"
+      }
+    },
+    "kubernetes": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "kubernetes-mcp-server@latest"
+      ],
+      "env": {}
+    },
+    "context7": {
+      "type": "sse",
+      "url": "https://mcp.context7.com/sse"
+    },
+    "playwright": {
+      "command": "npx",
+      "args": [
+        "@playwright/mcp@latest"
+      ]
+    },
+    "serena": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": [
+        "--from",
+        "git+https://github.com/oraios/serena",
+        "serena-mcp-server",
+        "--enable-web-dashboard",
+        "true"
+      ],
+      "env": {}
+    },
+    "sequential-thinking": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-sequential-thinking"
+      ],
+      "env": {}
+    }
+  }
+}

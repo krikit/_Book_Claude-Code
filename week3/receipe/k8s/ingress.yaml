@@ -1,0 +1,43 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: cookshare-ingress
+  namespace: cookshare-local
+  labels:
+    app: cookshare
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/proxy-body-size: "50m"
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: cookshare.local
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: cookshare-app
+            port:
+              number: 3000
+---
+# Alternative service for direct port access (NodePort)
+apiVersion: v1
+kind: Service
+metadata:
+  name: cookshare-app-nodeport
+  namespace: cookshare-local
+  labels:
+    app: cookshare-app
+    service-type: external
+spec:
+  type: NodePort
+  ports:
+  - port: 3000
+    targetPort: 3000
+    nodePort: 30000
+    protocol: TCP
+    name: http
+  selector:
+    app: cookshare-app
