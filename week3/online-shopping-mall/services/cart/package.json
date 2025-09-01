@@ -1,0 +1,29 @@
+{
+  "name": "@shopping-mall/cart-service",
+  "version": "1.0.0",
+  "description": "Shopping cart and wishlist service",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "test": "vitest",
+    "lint": "eslint src --ext .ts",
+    "type-check": "tsc --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@shopping-mall/shared": "workspace:*",
+    "@shopping-mall/types": "workspace:*",
+    "express": "^4.18.2",
+    "redis": "^4.6.8",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.17",
+    "@types/redis": "^4.0.11",
+    "tsx": "^3.12.7",
+    "vitest": "^0.34.0"
+  }
+}
