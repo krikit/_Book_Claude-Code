@@ -1,0 +1,2 @@
+# Outputs
+- mcp: p326
