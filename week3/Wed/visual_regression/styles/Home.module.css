@@ -2,13 +2,23 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: var(--bg-primary);
+  transition: all 0.3s ease;
 }
 
 .header {
-  text-align: center;
   padding: 4rem 2rem 2rem;
+  background: linear-gradient(135deg, var(--accent-color) 0%, #764ba2 100%);
   color: white;
+}
+
+.headerTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 2rem;
 }
 
 .title {
@@ -16,6 +26,7 @@
   font-weight: bold;
   margin-bottom: 1rem;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  data-testid: "home-title";
 }
 
 .subtitle {
@@ -39,44 +50,51 @@
 }
 
 .card {
-  background: white;
+  background: var(--bg-primary);
   border-radius: 12px;
   padding: 2rem;
   text-decoration: none;
-  color: inherit;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  color: var(--text-primary);
+  box-shadow: 0 4px 20px var(--shadow-color);
   transition: all 0.3s ease;
-  border: 1px solid #e1e5e9;
+  border: 1px solid var(--border-color);
 }
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 30px var(--shadow-color);
+  border-color: var(--border-hover);
+  background: var(--bg-hover);
 }
 
 .card h3 {
   margin: 0 0 1rem 0;
   font-size: 1.4rem;
-  color: #2c3e50;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
 }
 
 .card p {
   margin: 0;
-  color: #666;
+  color: var(--text-secondary);
   line-height: 1.6;
+  transition: color 0.3s ease;
 }
 
 .features {
-  background: white;
+  background: var(--bg-primary);
   border-radius: 12px;
   padding: 2rem;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 20px var(--shadow-color);
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
 }
 
 .features h2 {
   text-align: center;
   margin-bottom: 2rem;
-  color: #2c3e50;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
 }
 
 .featureList {
@@ -89,27 +107,77 @@
   text-align: center;
   padding: 1.5rem;
   border-radius: 8px;
-  background: #f8f9fa;
-  border: 1px solid #e9ecef;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.feature:hover {
+  background: var(--bg-hover);
+  border-color: var(--border-hover);
 }
 
 .feature h4 {
   margin: 0 0 0.5rem 0;
-  color: #495057;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
 }
 
 .feature p {
   margin: 0;
-  color: #6c757d;
+  color: var(--text-secondary);
   font-size: 0.9rem;
+  transition: color 0.3s ease;
 }
 
 .footer {
-  background: rgba(0,0,0,0.8);
-  color: white;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
   text-align: center;
   padding: 2rem;
   margin-top: auto;
+  border-top: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+/* Loading States for Visual Testing */
+.loading .grid {
+  opacity: 0.6;
+  position: relative;
+}
+
+.loading .grid::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  margin: -20px 0 0 -20px;
+  border: 3px solid var(--border-color);
+  border-top: 3px solid var(--accent-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Error States for Visual Testing */
+.error .card {
+  border-color: var(--danger-color);
+  background: rgba(220, 53, 69, 0.05);
+}
+
+.error .card h3 {
+  color: var(--danger-color);
+}
+
+/* Success States for Visual Testing */
+.success .card {
+  border-color: var(--success-color);
+  background: rgba(40, 167, 69, 0.05);
+}
+
+.success .card h3 {
+  color: var(--success-color);
 }
 
 @media (max-width: 768px) {
@@ -119,6 +187,13 @@
   
   .header {
     padding: 2rem 1rem 1rem;
+  }
+  
+  .headerTop {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
   }
   
   .main {
@@ -132,5 +207,19 @@
   
   .card {
     padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.8rem;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+  }
+  
+  .headerTop {
+    gap: 0.5rem;
   }
 }

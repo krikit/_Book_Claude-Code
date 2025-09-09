@@ -9,7 +9,7 @@ module.exports = defineConfig({
   reporter: 'list',
   
   use: {
-    baseURL: 'http://localhost:3003',
+    baseURL: 'http://localhost:3000',
     trace: 'retain-on-failure',
   },
 
@@ -30,10 +30,5 @@ module.exports = defineConfig({
     },
   ],
 
-  webServer: {
-    command: 'npm run dev',
-    url: 'http://localhost:3003',
-    reuseExistingServer: !process.env.CI,
-    timeout: 120 * 1000,
-  },
+  // webServer disabled - using existing server
 });

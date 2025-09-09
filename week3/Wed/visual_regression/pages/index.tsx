@@ -1,13 +1,19 @@
 import React from 'react';
 import Link from 'next/link';
 import styles from '../styles/Home.module.css';
+import ThemeToggle from '../components/ThemeToggle';
 
 const Home: React.FC = () => {
   return (
     <div className={styles.container}>
       <header className={styles.header}>
-        <h1 className={styles.title}>Visual Regression Test Demo</h1>
-        <p className={styles.subtitle}>Percy와 Chromatic을 사용한 시각적 회귀 테스트 예제</p>
+        <div className={styles.headerTop}>
+          <div>
+            <h1 className={styles.title}>Visual Regression Test Demo</h1>
+            <p className={styles.subtitle}>Percy와 Chromatic을 사용한 시각적 회귀 테스트 예제</p>
+          </div>
+          <ThemeToggle />
+        </div>
       </header>
 
       <main className={styles.main}>
