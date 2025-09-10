@@ -1,4 +1,4 @@
-# Outputs
+## 클로드 코드 산출물
 - online-shopping-mall
   - msa
     - docs/PLAN.initial.md: p209

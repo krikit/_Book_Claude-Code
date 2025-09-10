@@ -1,4 +1,4 @@
-# Outputs
+## 클로드 코드 산출물
 - api_doc: p276
 - getting_started: p282
 - architecture: p283

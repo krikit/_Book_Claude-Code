@@ -1,4 +1,4 @@
-# Outputs
+## 클로드 코드 산출물
 - refactoring: p265
 - design_pattern: p268
 - performance_optimization: p268
