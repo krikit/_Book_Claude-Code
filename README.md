@@ -5,6 +5,7 @@
 </br>
 
 > 🔔 **_알림1: <클로드 코드> 완독 챌린지가 인프런에서 진행 중입니다. 모집은 **9월 17일**까지 입니다.➡️ ([링크](https://www.inflearn.com/challenge/4%EC%A3%BC-%EA%B3%BC%EC%A0%95-%ED%95%9C-%EA%B1%B8%EC%9D%8C-%EC%95%9E%EC%84%A0-%EA%B0%9C%EB%B0%9C%EC%9E%90%EB%A5%BC-%EC%9C%84))
+> 🔔 **_알림2: 추가 문서는 각 주차(week) README.md 또는 아래의 문서 링크로 확인할 수 있습니다. (WIP, 🏗️) 
 
 이 저장소는 [한 걸음 앞선 개발자가 지금 꼭 알아야  할 클로드  코드](https://www.yes24.com/product/goods/152379887) 책에 실습을 위한 코드를 제공합니다.
 
@@ -56,10 +57,10 @@
 - 📍  [예스24](https://gilbut.co/c/25089736aH)
 - 📍  [알라딘](https://gilbut.co/c/25082385Mq)
 
-
 ## 유용한 정보
 -  📜 [제미나이 CLI(Gemini CLI)로 쿠버네티스 관리하기](https://yozm.wishket.com/magazine/detail/3228/)
 -  📜 [제미나이 CLI(Gemini CLI)로 프로메테우스/그라파나 배포하기](https://yozm.wishket.com/magazine/detail/3239/)
 -  📜 [알아두면 쓸모있는 제미나이 CLI(Gemini CLI) 사용법](https://yozm.wishket.com/magazine/detail/3259/)
+-  📜 [제미나이 CLI vs 클로드 코드: 바이브옵스(VibeOps) 관점에서 비교하기](https://yozm.wishket.com/magazine/detail/3334/)
 
 
