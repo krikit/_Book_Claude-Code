@@ -6,4 +6,4 @@
 - **p162**: refactoring
 
 ## 참고 문서
-**p151**: [devcontainer 설명 및 실습.pdf](./here.pdf)
+**p151**: (WIP, 🏗️)[devcontainer 설명 및 실습.pdf](./here.pdf)
