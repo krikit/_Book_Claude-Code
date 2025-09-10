@@ -1,11 +1,11 @@
 ## 클로드 코드 산출물
-- p265: refactoring
-- p268: design_pattern
-- p268: performance_optimization
-  - p268: react_component
-  - p271: database_query 
-  - p271: bundle_size 
-  - p272: code_quality
-- p273: tech_dept
-- p273: refactoring_roadmap
-- p273: legacy_refactoring_plan
+- **p265**: refactoring
+- **p268**: design_pattern
+- **p268**: performance_optimization
+  - **p268**: react_component
+  - **p271**: database_query 
+  - **p271**: bundle_size 
+  - **p272**: code_quality
+- **p273**: tech_dept
+- **p273**: refactoring_roadmap
+- **p273**: legacy_refactoring_plan
