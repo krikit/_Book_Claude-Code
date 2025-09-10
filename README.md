@@ -20,7 +20,7 @@
 | **화** | <small>클로드 코드에서 제공하는 내장 명령어</small> | <small>프롬프트 잘 작성하기</small> | <small>부트스트래핑: 프로젝트 초기 구성 자동화</small> | <small>사용자 정의 명령어 만들기</small> |
 | **수** | <small>인공지능으로 내 컴퓨터에만 있는 정보 분석하기</small> | <small>클로드 실행 모드 마스터하기</small> | <small>테스트: 클로드 코드와 함께하는 TDD</small> | <small>클로드 코드 확장하기</small> |
 | **목** | <small>넘겨받은 디렉터리 분석 및 조치</small> | <small>클로드 코드의 내장 도구와 터미널 확장</small> | <small>개선: 코드 리뷰, 리팩토링, 성능 최적화</small> | <small>다양한 MCP 활용 전략</small> |
-| **금** | <small>고양이 웹 페이지를 만들고 공개하기</small> | <small>MCP(Model Context Protocol) 연동 ([깃허브.pdf](./week2/Fri/%5B%ED%81%B4%EB%A1%9C%EB%93%9C_%EC%BD%94%EB%93%9C%5D_p196_%EA%B9%83%ED%97%88%EB%B8%8C_MCP_%EC%84%9C%EB%B2%84_%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0.pdf))</small> | <small>명세 작성 및 문서화: 살아 있는 문서 만들기</small> | <small>멀티 에이전트 시스템</small> |
+| **금** | <small>고양이 웹 페이지를 만들고 공개하기</small> | <small>MCP(Model Context Protocol) 연동 ([깃허브.pdf](./week2/Fri/%5B%ED%81%B4%EB%A1%9C%EB%93%9C_%EC%BD%94%EB%93%9C%5D_p198_%EA%B9%83%ED%97%88%EB%B8%8C_MCP_%EC%84%9C%EB%B2%84_%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0.pdf))</small> | <small>명세 작성 및 문서화: 살아 있는 문서 만들기</small> | <small>멀티 에이전트 시스템</small> |
 | **주말** | <small>클로드 코드 vs 제미나이 CLI</small> | <small>클로드 코드와 개발자 생산성</small> | <small>AI에 최적화된 워크플로</small> | <small>AI 코딩 도구의 현재와 미래</small> |
 
 ---

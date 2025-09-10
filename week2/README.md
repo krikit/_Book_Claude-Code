@@ -6,7 +6,7 @@
 | **화** | 프롬프트 잘 작성하기 | <small>효과적인 프롬프트 작성 기법 및 실습</small> |
 | **수** | 클로드 실행 모드 마스터하기 | <small>다양한 실행 모드 이해 및 활용법</small> |
 | **목** | 클로드 코드의 내장 도구와 터미널 확장 | <small>내장 도구 활용 및 터미널 기능 확장</small> |
-| **금** | MCP(Model Context Protocol) 연동 | <small>MCP 서버 설정 및 연동 실습 ([깃허브.pdf](./Fri/%5B%ED%81%B4%EB%A1%9C%EB%93%9C_%EC%BD%94%EB%93%9C%5D_p196_%EA%B9%83%ED%97%88%EB%B8%8C_MCP_%EC%84%9C%EB%B2%84_%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0.pdf))</small> |
+| **금** | MCP(Model Context Protocol) 연동 | <small>MCP 서버 설정 및 연동 실습 ([깃허브.pdf](./Fri/%5B%ED%81%B4%EB%A1%9C%EB%93%9C_%EC%BD%94%EB%93%9C%5D_p198_%EA%B9%83%ED%97%88%EB%B8%8C_MCP_%EC%84%9C%EB%B2%84_%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0.pdf))</small> |
 | **주말** | 클로드 코드와 개발자 생산성 | <small>생산성 향상 전략 및 사례 분석</small> |  
 --- 
 ## 월> CLAUDE.md  
