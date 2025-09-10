@@ -1,10 +1,12 @@
 ## 클로드 코드 산출물
 
+**코드 품질 개선 및 성능 최적화 시스템**
+
 | 페이지 | 프로젝트 | 설명 |
 |--------|----------|------|
-| **p265** | 📁 refactoring | TypeScript에서 클린 코드 원칙을 적용한 리팩토링 예제 |
-| **p268** | 📁 design_pattern | Strategy Pattern을 활용한 결제 처리 시스템 리팩토링 |
-| **p268-272** | 📁 performance_optimization | React 컴포넌트 성능 최적화 기법들 전후 비교 예제 |
-| **p273** | 📁 tech_dept | 다양한 기술부채 문제들을 포함한 문제 시연 프로젝트 |
-| **p273** | 📁 refactoring_roadmap | 리팩토링 로드맵과 계획 수립 가이드 |
-| **p273** | 📁 legacy_refactoring_plan | 레거시 코드를 현대적인 코드로 리팩토링하는 계획과 실행 예제 |
+| **p265** | 📁 refactoring | 클린 코드 원칙 적용 실습 (TypeScript 기반 코드 품질 개선 기법과 실제 리팩토링 과정) |
+| **p268** | 📁 design_pattern | 디자인 패턴을 통한 구조 개선 (Strategy Pattern으로 결제 시스템 복잡도 해결) |
+| **p268-272** | 📁 performance_optimization | 웹 애플리케이션 성능 최적화 (React memo, 가상화, 번들 최적화, 데이터베이스 쿼리 개선) |
+| **p273** | 📁 tech_dept | 기술 부채 식별 및 해결 전략 (Deprecated API, 복잡도 높은 코드, 보안 취약점 개선) |
+| **p273** | 📁 refactoring_roadmap | 체계적 리팩토링 계획 수립 (프로젝트 규모별 리팩토링 로드맵 작성 및 우선순위 결정) |
+| **p273** | 📁 legacy_refactoring_plan | 레거시 시스템 현대화 전략 (구 버전 코드를 최신 기술 스택으로 점진적 마이그레이션) |
