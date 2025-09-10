@@ -1,6 +1,6 @@
 ## 클로드 코드 산출물
-- api_doc: p276
-- getting_started: p282
-- architecture: p283
-- code_doc_sync: p288
-- runbook: p291
+- p276: api_doc
+- p282: getting_started
+- p283: architecture
+- p288: code_doc_sync
+- p291: runbook
