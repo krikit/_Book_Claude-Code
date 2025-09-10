@@ -2,10 +2,10 @@
 - p265: refactoring
 - p268: design_pattern
 - p268: performance_optimization
-  - react_component: p268
-  - database_query: p271 
-  - bundle_size: p271 
-  - code_quality: p272
+  - p268: react_component
+  - p271: database_query 
+  - p271: bundle_size 
+  - p272: code_quality
 - p273: tech_dept
 - p273: refactoring_roadmap
 - p273: legacy_refactoring_plan
