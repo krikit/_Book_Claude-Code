@@ -2,5 +2,5 @@
 - **p229**: cookshare
 
 ## 참고 문서
-**p236**: (WIP, 🏗️) [Playwright 설명 및 실습 (w/ MCP).pdf](./here.pdf)
+- **p236**: (WIP, 🏗️) [Playwright 설명 및 실습 (w/ MCP).pdf](./here.pdf)
 
