@@ -25,6 +25,10 @@
 
 ---
 
+## 📌 정오표 (오류 수정 및 추가 정보 제공 목적)
+본 도서의 쇄(edition)별 정정 사항은 [Releases](https://github.com/sysnet4admin/_Book_Claude-Code/releases/)에서 확인하실 수 있습니다.
+- [📑 1쇄 정오표](https://github.com/sysnet4admin/_Book_Claude-Code/releases/tag/1st-edition)
+
 ## 저자
 - ✔️   [조 훈](https://github.com/sysnet4admin)
 - ✔️   [정찬훈](https://github.com/keyolk)
