@@ -43,6 +43,7 @@
 -  📜 [제미나이 CLI(Gemini CLI)로 쿠버네티스 관리하기](https://yozm.wishket.com/magazine/detail/3228/)
 -  📜 [제미나이 CLI(Gemini CLI)로 프로메테우스/그라파나 배포하기](https://yozm.wishket.com/magazine/detail/3239/)
 -  📜 [알아두면 쓸모있는 제미나이 CLI(Gemini CLI) 사용법](https://yozm.wishket.com/magazine/detail/3259/)
+-  📜 [바이브옵스(VibeOps)로 운영 생산성 극대화하기](https://yozm.wishket.com/magazine/detail/3325/)
 -  📜 [제미나이 CLI vs 클로드 코드: 바이브옵스(VibeOps) 관점에서 비교하기](https://yozm.wishket.com/magazine/detail/3334/)
 
 
