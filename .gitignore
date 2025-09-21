@@ -83,3 +83,5 @@ env/
 tests
 test-results
 playwright-report
+
+settings.local.json
